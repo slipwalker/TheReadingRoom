@@ -1,0 +1,12 @@
+{
+  "CorrectUser": {
+    "name": "MalkolmKarter",
+    "email": "malkolm.karter@test.com",
+    "password": "123456"
+  },
+  "WrongUser": {
+    "name": "WrongUser",
+    "email": "wrong.user@test.com",
+    "password": "123456"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "list":
+    [
+      {
+        "name": "Dummy",
+        "email": "dummy@test.com",
+        "password": "123456"
+      },
+      {
+        "name": "Dunkey",
+        "email": "dunkey@test.com",
+        "password": "123456"
+      }
+    ]
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bookshelf Management" verbose="1" parallel="tests" thread-count="1">
+    <parameter name="browser" value="firefox"/>
+
+    <test name="MoveBookBetweenShelves" enabled="true">
+        <classes>
+            <class name="com.readingroom.tests.bookshelf.BookshelfTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.readingroom.listeners.TestMethodListener"/>
+        <listener class-name="com.readingroom.listeners.TestListener"/>
+    </listeners>
+</suite>

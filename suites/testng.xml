@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Full Test Suite" verbose="1">
+    <suite-files>
+        <suite-file path="Login.xml"/>
+        <suite-file path="Bookshelf.xml"/>
+    </suite-files>
+
+    <listeners>
+        <listener class-name="com.readingroom.listeners.TestMethodListener"/>
+        <listener class-name="com.readingroom.listeners.TestListener"/>
+        <listener class-name="com.readingroom.listeners.MySuiteListener"/>
+        <listener class-name="com.readingroom.listeners.MyExecutionListener"/>
+    </listeners>
+</suite>

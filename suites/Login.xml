@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Actions" verbose="1" parallel="tests" thread-count="1">
+    <parameter name="browser" value="firefox"/>
+
+    <test name="Login" enabled="true">
+        <classes>
+            <class name="com.readingroom.tests.login.LoginTest"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.readingroom.listeners.TestMethodListener"/>
+        <listener class-name="com.readingroom.listeners.TestListener"/>
+    </listeners>
+</suite>
