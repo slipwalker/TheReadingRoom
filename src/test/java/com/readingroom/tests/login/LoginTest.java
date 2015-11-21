@@ -30,7 +30,7 @@ public class LoginTest {
 
     @Parameters({"url", "browser", "downloadFolder"})
     @BeforeSuite
-    public void initSuite(@Optional("http://dev.thereadingroom.com/") String url,
+    public void initSuite(@Optional("http://thereadingroom.com/") String url,
                           @Optional("firefox") String browser,
                           @Optional("test-temp") String downloadFolder)
     {
