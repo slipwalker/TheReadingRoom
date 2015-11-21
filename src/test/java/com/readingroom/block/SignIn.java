@@ -4,6 +4,8 @@ import com.readingroom.elements.Edit;
 import com.readingroom.models.User;
 import com.readingroom.pages.UserOverviewPage;
 import com.readingroom.util.EntitiesContainer;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -27,6 +29,11 @@ public class SignIn extends HtmlElement {
 
     @FindBy(css = "[ng-repeat*='error']")
     private WebElement warningMessage;
+
+    @Override
+    public <X> X getScreenshotAs(OutputType<X> outputType) throws WebDriverException {
+        return getWrappedElement().getScreenshotAs(outputType);
+    }
 
     @Step
     public SignIn enterUserName(String name) {

@@ -8,7 +8,6 @@ import com.readingroom.webdriver.ExtendedWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import org.testng.xml.XmlTest;
-import ru.yandex.qatools.allure.annotations.Step;
 
 public class TestBase {
 
@@ -16,14 +15,13 @@ public class TestBase {
         return EntitiesContainer.getPageManager();
     }
 
-    @Step
     private HomePage openHomePage() {
         return getPageManager().getPageNavigator().getHomePage();
     }
 
     @Parameters({"url", "browser", "downloadFolder"})
     @BeforeSuite
-    public void initSuite(@Optional("http://dev.thereadingroom.com/") String url,
+    public void initSuite(@Optional("http://thereadingroom.com/") String url,
                           @Optional("firefox") String browser,
                           @Optional("test-temp") String downloadFolder)
     {

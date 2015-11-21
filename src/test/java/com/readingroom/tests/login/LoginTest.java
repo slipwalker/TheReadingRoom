@@ -28,20 +28,6 @@ public class LoginTest {
         return homePage;
     }
 
-    @Test(dataProvider = "WrongUsers", dataProviderClass = DataProviderFactory.class)
-    @Stories("Login with incorrect credentials")
-    @Description("Verify that it is NOT possible to login with incorrect credentials")
-    public void CheckThatLoginIncorrectWithBadCred(User user) {
-        SignIn signInForm = getHomePage().getSignInForm();
-        signInForm
-                .enterUserName(user.getName())
-                .enterPassword(user.getPassword())
-                .signIn()
-                .verifyWarningDisplayed();
-
-        assertThat("Check warning message: ", signInForm.getWarningMessage(), equalTo("Incorrect credentials"));
-    }
-
     @Parameters({"url", "browser", "downloadFolder"})
     @BeforeSuite
     public void initSuite(@Optional("http://dev.thereadingroom.com/") String url,
@@ -66,5 +52,19 @@ public class LoginTest {
     @AfterSuite(alwaysRun = true)
     public void tearDown() {
         DriverFactory.quitAllDrivers();
+    }
+
+    @Test(dataProvider = "WrongUsers", dataProviderClass = DataProviderFactory.class)
+    @Stories("Login with incorrect credentials")
+    @Description("Verify that it is NOT possible to login with incorrect credentials")
+    public void CheckThatLoginIncorrectWithBadCred(User user) {
+        SignIn signInForm = getHomePage().getSignInForm();
+        signInForm
+                .enterUserName(user.getName())
+                .enterPassword(user.getPassword())
+                .signIn()
+                .verifyWarningDisplayed();
+
+        assertThat("Check warning message: ", signInForm.getWarningMessage(), equalTo("Incorrect credentials"));
     }
 }

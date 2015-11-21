@@ -13,12 +13,13 @@
 		<main.basedir>${project.basedir}</main.basedir>
 		<suite>suites/testng.xml</suite>
 		<aspectj.version>1.8.6</aspectj.version>
-		<allure.version>15.4.1</allure.version>
+		<allure.version>1.4.19</allure.version>
+		<allure.plugin.version>2.2</allure.plugin.version>
 		<htmlelements.version>1.14</htmlelements.version>
-		<surefire.version>2.18.1</surefire.version>
+		<surefire.version>2.19</surefire.version>
 		<testng.version>6.9.6</testng.version>
 		<harmcrest.version>1.3</harmcrest.version>
-		<selenium.version>2.47.1</selenium.version>
+		<selenium.version>2.48.2</selenium.version>
 		<allure.plugin.version>2.2</allure.plugin.version>
 		<testConfig>src/test/resources/application.properties</testConfig>
 		<compiler.version>1.7</compiler.version>
@@ -65,6 +66,12 @@
 			<groupId>ru.yandex.qatools.allure</groupId>
 			<artifactId>allure-testng-adaptor</artifactId>
 			<version>${allure.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>junit</artifactId>
+					<groupId>junit</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -98,6 +105,7 @@
 			<resource>
 				<directory>src/test/resources</directory>
 				<filtering>true</filtering>
+				<targetPath>${project.build.testOutputDirectory}}</targetPath>
 			</resource>
 		</resources>
 		<plugins>

@@ -40,6 +40,11 @@ public class BookshelfTest extends TestBase {
         return getPageManager().getPageNavigator().getHaveReadBookShelfPage(userName);
     }
 
+    @BeforeMethod
+    public void reOpenUserOverviewPage() {
+        userOverviewPage = openUserOverviewPage();
+    }
+
     @Test(dataProvider = "BookShelves", dataProviderClass = DataProviderFactory.class)
     @Stories("Alert about wrong user credentials")
     @Description("Verify that proper alert message is shown after selecting a bookshelf")
@@ -87,10 +92,5 @@ public class BookshelfTest extends TestBase {
         }
 
         assertThat("Check that book is shown on the proper bookshelf: ", bookShelfPage.getBookCoversSize(), greaterThan(0));
-    }
-
-    @BeforeMethod
-    public void reOpenUserOverviewPage() {
-        userOverviewPage = openUserOverviewPage();
     }
 }

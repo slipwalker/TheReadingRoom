@@ -1,5 +1,7 @@
 package com.readingroom.block;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.Image;
@@ -9,6 +11,11 @@ import ru.yandex.qatools.htmlelements.element.TextBlock;
 public class BookBl extends HtmlElement {
 
     private final static String ROOT_NODE = ".book-block";
+
+    @Override
+    public <X> X getScreenshotAs(OutputType<X> outputType) throws WebDriverException {
+        return getWrappedElement().getScreenshotAs(outputType);
+    }
 
     @FindBy(css = ROOT_NODE + " img")
     private Image image;

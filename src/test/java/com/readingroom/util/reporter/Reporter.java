@@ -12,7 +12,18 @@ public class Reporter {
     public static byte[] reportScreenshot(String name) {
         try {
             return ((TakesScreenshot) EntitiesContainer.getBrowserDriver()).getScreenshotAs(OutputType.BYTES);
-        } catch (RuntimeException e) {
+        } catch (RuntimeException ex) {
+            ex.printStackTrace();
+            return new byte[]{0};
+        }
+    }
+
+    @Attachment(value = "Report screenshot", type = "image/png")
+    public static byte[] reportScreenshot() {
+        try {
+            return ((TakesScreenshot) EntitiesContainer.getBrowserDriver()).getScreenshotAs(OutputType.BYTES);
+        } catch (RuntimeException ex) {
+            ex.printStackTrace();
             return new byte[]{0};
         }
     }
